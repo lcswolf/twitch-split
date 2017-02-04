@@ -1,16 +1,15 @@
-import 'babel-polyfill';
-
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router, Route, browserHistory} from 'react-router';
+import { Router, Route, browserHistory } from 'react-router';
 
-import {Main} from './app/main';
+import { Main } from './app/main';
 
 import './index.scss';
 
 ReactDOM.render(
   <Router history={browserHistory}>
-    <Route path="/" component={Main}/>
+    <Route path="/" component={Main} />
   </Router>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );

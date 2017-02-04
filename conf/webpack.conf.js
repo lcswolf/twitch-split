@@ -12,14 +12,14 @@ module.exports = {
       {
         test: /.json$/,
         loaders: [
-          'json-loader'
-        ]
+          'json-loader',
+        ],
       },
       {
-        test: /.js$/,
+        test: /.js?$/,
         exclude: /node_modules/,
         loader: 'eslint-loader',
-        enforce: 'pre'
+        enforce: 'pre',
       },
       {
         test: /\.(css|scss)$/,
@@ -27,42 +27,42 @@ module.exports = {
           'style-loader',
           'css-loader',
           'sass-loader',
-          'postcss-loader'
-        ]
+          'postcss-loader',
+        ],
       },
       {
-        test: /\.js$/,
+        test: /\.js?$/,
         exclude: /node_modules/,
         loaders: [
           'react-hot-loader',
-          'babel-loader'
-        ]
-      }
-    ]
+          'babel-loader',
+        ],
+      },
+    ],
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.NoErrorsPlugin(),
     FailPlugin,
     new HtmlWebpackPlugin({
-      template: conf.path.src('index.html')
+      template: conf.path.src('index.html'),
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.LoaderOptionsPlugin({
       options: {
-        postcss: () => [autoprefixer]
+        postcss: () => [autoprefixer],
       },
-      debug: true
-    })
+      debug: true,
+    }),
   ],
   devtool: 'source-map',
   output: {
     path: path.join(process.cwd(), conf.paths.tmp),
-    filename: 'index.js'
+    filename: 'index.js',
   },
   entry: [
     'webpack/hot/dev-server',
     'webpack-hot-middleware/client',
-    `./${conf.path.src('index')}`
-  ]
+    `./${conf.path.src('index')}`,
+  ],
 };

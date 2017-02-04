@@ -1,35 +1,40 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
+import uuid from 'uuid/v4';
 
-import {Tech} from './tech';
+import Tech from './Tech';
 
 const styles = {
   container: {
-    margin: '1rem'
+    margin: '1rem',
   },
   h2: {
     fontWeight: 300,
-    fontSize: '1.5rem'
+    fontSize: '1.5rem',
   },
   techs: {
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'space-around'
-  }
+    justifyContent: 'space-around',
+  },
 };
 
-export class Techs extends Component {
+export default class Techs extends Component {
   constructor() {
     super();
-    this.state = {techs: []};
+    this.state = { techs: [] };
   }
 
   componentDidMount() {
     axios
       .get('app/techs/techs.json')
-      .then(response => {
-        this.setState({techs: response.data});
+      .then((response) => {
+        const techs = response.data.map(tech => ({
+          ...tech,
+          id: uuid(),
+        }));
+        this.setState({ techs });
       });
   }
 
@@ -40,8 +45,8 @@ export class Techs extends Component {
           Cooked with all these awesome technologies:
         </h2>
         <div style={styles.techs}>
-          {this.state.techs.map((tech, i) => (
-            <Tech key={i} tech={tech}/>
+          {this.state.techs.map(tech => (
+            <Tech key={tech.id} tech={tech} />
           ))}
         </div>
       </div>
