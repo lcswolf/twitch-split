@@ -7,6 +7,7 @@ module.exports = {
   assets: resolve(__dirname, '../dist/static'),
   indexTemplate: resolve(__dirname, '../index.html'),
   indexOutputFilename: resolve(__dirname, '../dist/index.html'),
+  src: resolve(__dirname, '../src'),
 
   // Relative paths
   mainEntryPoint: './main.js',

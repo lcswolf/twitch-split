@@ -5,7 +5,7 @@ import { shallow } from 'enzyme';
 import App from './App';
 
 describe('<App />', () => {
-  it('it is a SPAN', () => {
-    expect(shallow(<App />).find('span').length).to.equal(1);
+  it('it is a DIV', () => {
+    expect(shallow(<App />).find('div').length).to.equal(1);
   });
 });
