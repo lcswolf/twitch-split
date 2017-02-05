@@ -12,4 +12,6 @@ module.exports = {
   mainEntryPoint: './main.js',
   outputFilename: 'static/js/[name].[chunkhash].js',
   outputChunkFilename: 'static/js/[id].[chunkhash].js',
+  imgFilename: 'static/img/[name].[hash:7].[ext]',
+  fontFilename: 'static/fonts/[name].[hash:7].[ext]',
 };
