@@ -9,7 +9,7 @@
   "scripts": {
     "build": "node tools/build.js",
     "dev": "webpack-dev-server --config tools/webpack.config.dev.js",
-    "lint": "eslint src/**/*.js src/**/*.jsx",
+    "lint": "eslint src/**/*.js src/**/*.jsx tools/**/*.js",
     "test": "mocha --require babel-polyfill --compilers js:babel-register \"src\\*.spec.js\""
   },
   "dependencies": {
