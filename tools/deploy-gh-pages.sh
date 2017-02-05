@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 # https://gist.github.com/domenic/ec8b0fc8ab45f39403dd
 set -e # Exit with nonzero exit code if anything fails
-echo "Entering script"
-ls -l
 
 SOURCE_BRANCH="master"
 TARGET_BRANCH="gh-pages"
@@ -10,10 +8,7 @@ TARGET_BRANCH="gh-pages"
 function doCompile {
     yarn build
     if [ -d "out" ]; then
-        ls -l
-        echo "Copying files to out"
         cp -R dist/* out
-        ls -l
     fi
 }
 
@@ -63,7 +58,6 @@ ENCRYPTED_KEY_VAR="encrypted_${ENCRYPTION_LABEL}_key"
 ENCRYPTED_IV_VAR="encrypted_${ENCRYPTION_LABEL}_iv"
 ENCRYPTED_KEY=${!ENCRYPTED_KEY_VAR}
 ENCRYPTED_IV=${!ENCRYPTED_IV_VAR}
-ls -l
 openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in ../tools/deploy_key.enc -out ../tools/deploy_key -d
 chmod 600 ../tools/deploy_key
 eval `ssh-agent -s`
