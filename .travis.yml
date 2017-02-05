@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "6"
+env:
+  global:
+  - ENCRYPTION_LABEL: "c25778323bb8"
+  - COMMIT_AUTHOR_EMAIL: "travis@travis-ci.org"
+script:
+  - yarn run lint
+  - yarn run test
+  - yarn run build
+after_success:
+  - tools/deploy-gh-pages.sh
