@@ -3,12 +3,6 @@ const buildPaths = require('./buildPaths');
 module.exports = {
   context: buildPaths.context,
 
-  output: {
-    filename: 'bundle.js',
-    path: buildPaths.outputPath,
-    publicPath: buildPaths.publicPath,
-  },
-
   module: {
     rules: [
       {
@@ -22,6 +16,15 @@ module.exports = {
         test: /\.css$/,
         use: [
           'style-loader',
+          'css-loader',
+        ],
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
         ],
       },
     ],

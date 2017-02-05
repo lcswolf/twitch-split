@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './app.css';
 
 export default class App extends Component {
   constructor() {
@@ -10,6 +11,6 @@ export default class App extends Component {
   }
 
   render() {
-    return <div>Hello world: {this.state.count}</div>;
+    return <div className="hello-world">Hello world: {this.state.count}</div>;
   }
 }
