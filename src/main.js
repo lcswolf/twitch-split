@@ -1,16 +1,19 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
+import 'normalize.css/normalize.css';
+
 import App from './App';
 
-/* eslint-disable react/jsx-filename-extension */
-const appEl = document.getElementById('app');
+const rootElement = document.getElementById('app');
+
 const render = (Component) => {
   ReactDOM.render(
     <AppContainer>
       <Component />
     </AppContainer>,
-    appEl,
+    rootElement,
   );
 };
 
@@ -18,6 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
   render(App);
 });
 
+// Respond to code changes when hot module replacement is enabled.
+// module.hot is injected when webpack-dev-server is running.
 if (module.hot) {
   module.hot.accept('./App', () => { render(App); });
 }
