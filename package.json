@@ -10,7 +10,8 @@
     "build": "node tools/build.js",
     "dev": "webpack-dev-server --config tools/webpack.config.dev.js",
     "lint": "eslint src/**/*.js src/**/*.jsx tools/**/*.js",
-    "test": "mocha --compilers js:babel-register --require ignore-styles --recursive ./src/*.spec.js"
+    "test": "mocha --compilers js:babel-register --watch-extensions jsx --require ignore-styles ./src/**/*.spec.js",
+    "test:watch": "npm run test -- --watch"
   },
   "dependencies": {
     "normalize.css": "^5.0.0",
@@ -47,6 +48,7 @@
     "react-addons-test-utils": "^15.4.2",
     "sass-loader": "^4.1.1",
     "shelljs": "^0.7.6",
+    "sinon": "^1.17.7",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^2.2.1",
@@ -78,23 +80,9 @@
       "mocha": true
     },
     "rules": {
-      "import/no-extraneous-dependencies": [
-        "error",
-        {
-          "devDependencies": [
-            "**/*.spec.js"
-          ]
-        }
-      ],
-      "react/jsx-filename-extension": [
-        1,
-        {
-          "extensions": [
-            ".jsx",
-            ".spec.js"
-          ]
-        }
-      ]
+      "import/no-extraneous-dependencies": [ "error", { "devDependencies": [ "**/*.spec.js" ] } ],
+      "react/jsx-filename-extension": ["error", { "extensions": [ ".jsx", ".spec.js" ] } ],
+      "no-unused-expressions": "off"
     },
     "extends": "airbnb"
   }

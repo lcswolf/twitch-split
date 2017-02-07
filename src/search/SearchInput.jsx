@@ -4,27 +4,35 @@ import './SearchInput.scss';
 class SearchInput extends Component {
   static propTypes = {
     onChange: PropTypes.func.isRequired,
+    onBlur: PropTypes.func.isRequired,
+    onFocus: PropTypes.func.isRequired,
     className: PropTypes.string,
   };
 
   static defaultProps = { className: '' };
 
-  onKeyUp = () => {
-    this.props.onChange({ value: this.input.value });
+  componentDidMount() {
+    this.input.focus();
   }
 
   render() {
     return (
-      <form
+      <div
         className={`search-input ${this.props.className}`}
-        onSubmit={(e) => { e.preventDefault(); }}
       >
-        <input
-          type="text"
-          ref={(c) => { this.input = c; }}
-          onKeyUp={this.onKeyUp}
-        />
-      </form>
+        <form
+          onSubmit={(e) => { e.preventDefault(); }}
+        >
+          <input
+            type="text"
+            ref={(c) => { this.input = c; }}
+            onChange={(e) => { this.props.onChange({ value: e.target.value }); }}
+            onBlur={() => { this.props.onBlur(); }}
+            onFocus={() => { this.props.onFocus(); }}
+          />
+        </form>
+        <i className="fa fa-search" aria-hidden="true" />
+      </div>
     );
   }
 }
