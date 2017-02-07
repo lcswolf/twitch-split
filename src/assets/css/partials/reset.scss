@@ -1,0 +1,8 @@
+@import '~normalize.css/normalize.css';
+
+// Remove margins from heading tags.
+@for $i from 1 through 6 {
+  h#{$i} {
+    margin: 0;
+  }
+}

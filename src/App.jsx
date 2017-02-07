@@ -1,12 +1,14 @@
 import React from 'react';
-import { hashHistory, IndexRoute, Router, Route } from 'react-router';
-import { Layout } from './layout';
-import { Search } from './search';
+import { hashHistory, Route, Router } from 'react-router';
+import { SearchView } from './search';
+
+// function onEnter(nextState, replace) {
+//   console.log('nextState', nextState, 'replace', replace); // eslint-disable-line
+// }
 
 export default () => (
   <Router history={hashHistory}>
-    <Route path="/" component={Layout}>
-      <IndexRoute component={Search} />
-    </Route>
+    <Route path="/" component={SearchView} />
+    {/* <Route path="/*" component={Search} onEnter={onEnter} />*/}
   </Router>
 );

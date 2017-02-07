@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import 'normalize.css/normalize.css';
+import './assets/css/index.scss';
 
 import App from './App';
 

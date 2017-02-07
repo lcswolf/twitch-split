@@ -6,6 +6,6 @@ import App from './App';
 
 describe('<App />', () => {
   it('it is a DIV', () => {
-    expect(shallow(<App />).find('div').length).to.equal(1);
+    expect(shallow(<App />).find('div').length).to.equal(0);
   });
 });

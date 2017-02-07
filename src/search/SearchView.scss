@@ -1,0 +1,15 @@
+.search-view {
+  height: 100vh;
+  max-height: 100vh;
+  text-align: center;
+
+  &__header {
+    padding-top: 200px;
+    padding-bottom: 20px;
+  }
+
+  &__form-wrapper {
+    margin: 0 auto;
+    max-width: 600px;
+  }
+}
