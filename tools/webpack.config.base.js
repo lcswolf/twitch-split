@@ -10,7 +10,7 @@ const babelConfig = Object.assign({}, pkg.babel, {
   babelrc: false,
   cacheDirectory: true,
   // eslint-disable-next-line no-confusing-arrow
-  presets: pkg.babel.presets.map(x => x === 'es2015' ? ['es2015', { modules: false }] : x),
+  presets: pkg.babel.presets.map(x => x === 'latest' ? ['latest', { es2015: { modules: false } }] : x),
 });
 
 module.exports = {
