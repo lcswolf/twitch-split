@@ -1,4 +1,3 @@
-// import axios from 'axios';
 import 'isomorphic-fetch';
 
 export const TWITCH = {
@@ -36,6 +35,7 @@ export const streamSearch = (rawQuery) => {
 
     // If a previous search was already dispatched for the provided query, do
     // nothing.
+    if (query.length === 0) return Promise.resolve();
     if (queries[query]) return Promise.resolve();
 
     // Add an empty query object to prevent multiple simultaneous searches for
@@ -60,3 +60,19 @@ export const streamSearch = (rawQuery) => {
     .catch(error => dispatch(streamSearchError(query, error)));
   };
 };
+
+export const SET_CURRENT_SEARCH = 'SET_CURRENT_SEARCH';
+export const setCurrentSearch = query => ({
+  type: SET_CURRENT_SEARCH,
+  query: query.toLowerCase(),
+});
+
+export const SEARCH_RESULTS_HIDE = 'SEARCH_RESULTS_HIDE';
+export const searchResultsHide = () => ({
+  type: SEARCH_RESULTS_HIDE,
+});
+
+export const SEARCH_RESULTS_SHOW = 'SEARCH_RESULTS_SHOW';
+export const searchResultsShow = () => ({
+  type: SEARCH_RESULTS_SHOW,
+});
