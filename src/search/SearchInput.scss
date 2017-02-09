@@ -8,10 +8,12 @@
     font-size: 1.5rem;
   }
 
-  i {
+  ::before {
+    content: "\F002";
+    font-family: FontAwesome;
     position: absolute;
-    top: 15px;
-    left: 15px;
     font-size: 1.5rem;
+    top: 12px;
+    left: 15px;
   }
 }

@@ -31,7 +31,6 @@ class SearchInput extends Component {
             onFocus={() => { this.props.onFocus(); }}
           />
         </form>
-        <i className="fa fa-search" aria-hidden="true" />
       </div>
     );
   }
