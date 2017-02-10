@@ -33,10 +33,10 @@ describe('<SearchInput />', () => {
     expect(onChange.calledWith({ value: 'test' })).to.be.true;
   });
 
-  it('renders search icon', () => {
-    const wrapper = searchInput();
-    expect(wrapper.find('.fa.fa-search')).to.have.length(1);
-  });
+  // it('renders search icon', () => {
+  //   const wrapper = searchInput();
+  //   expect(wrapper.find('.fa.fa-search')).to.have.length(1);
+  // });
 
   it('calls onBlur/onFocus when input focus is gained/lost', () => {
     const onBlur = sinon.spy();
