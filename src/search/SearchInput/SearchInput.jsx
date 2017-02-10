@@ -7,6 +7,8 @@ class SearchInput extends Component {
     onBlur: PropTypes.func.isRequired,
     onFocus: PropTypes.func.isRequired,
     className: PropTypes.string,
+    value: PropTypes.string.isRequired,
+    disabled: PropTypes.bool.isRequired,
   };
 
   static defaultProps = { className: '' };
@@ -37,6 +39,8 @@ class SearchInput extends Component {
             onChange={(e) => { this.props.onChange({ value: e.target.value }); }}
             onBlur={this.blur}
             onFocus={() => { this.props.onFocus(); }}
+            value={this.props.value}
+            disabled={this.props.disabled}
           />
         </form>
       </div>

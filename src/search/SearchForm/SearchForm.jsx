@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import SearchInputContainer from './SearchInputContainer';
-import SearchResultsList from './SearchResultsList';
+import SearchInput from '../SearchInput';
+import SearchResultsList from '../SearchResultsList';
 import './SearchForm.scss';
 
 /* eslint-disable no-console, class-methods-use-this */
@@ -21,7 +21,7 @@ class SearchForm extends Component {
   render() {
     return (
       <div className="search-form">
-        <SearchInputContainer />
+        <SearchInput />
         <SearchResultsList />
       </div>
     );

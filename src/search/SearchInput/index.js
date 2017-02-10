@@ -1,3 +1,3 @@
-import SearchInput from './SearchInput';
+import SearchInputContainer from './SearchInputContainer';
 
-export default SearchInput;
+export default SearchInputContainer;

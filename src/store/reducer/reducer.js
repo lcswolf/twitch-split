@@ -45,10 +45,19 @@ export default (prevState, action) => {
     }
 
     case actions.STREAM_SELECT: {
-      console.log(action.id); // eslint-disable-line
-      if (state.selectedStreams.includes(action.id)) return state;
+      const exists = state.selectedStreams.findIndex(stream => stream.id === action.id);
+      if (exists !== -1) return state;
+      const selected = state.queries[state.currentSearch].find(stream => stream.id === action.id);
       const newState = Object.assign({}, state);
-      newState.selectedStreams = newState.selectedStreams.concat(action.id);
+      newState.selectedStreams = newState.selectedStreams.concat(selected);
+      newState.currentSearch = '';
+      return newState;
+    }
+
+    case actions.STREAM_UNSELECT: {
+      const newState = Object.assign({}, state);
+      const selectedStreams = state.selectedStreams.filter(stream => stream.id !== action.id);
+      newState.selectedStreams = selectedStreams;
       return newState;
     }
 

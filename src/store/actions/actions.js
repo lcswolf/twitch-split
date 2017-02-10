@@ -4,7 +4,7 @@ export const TWITCH = {
   CLIENT_ID: 'hzr8tf9f8ddrcnwv991g0p8njmgc2y',
   ACCEPT: 'application/vnd.twitchtv.v5+json',
   SEARCH: 'https://api.twitch.tv/kraken/search/streams',
-  LIMIT: 10,
+  LIMIT: 25,
 };
 
 export const STREAM_SEARCH_SUCCESS = 'STREAM_SEARCH_SUCCESS';
@@ -80,5 +80,11 @@ export const searchResultsShow = () => ({
 export const STREAM_SELECT = 'STREAM_SELECT';
 export const streamSelect = id => ({
   type: STREAM_SELECT,
+  id,
+});
+
+export const STREAM_UNSELECT = 'STREAM_UNSELECT';
+export const streamUnselect = id => ({
+  type: STREAM_UNSELECT,
   id,
 });
