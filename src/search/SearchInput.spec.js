@@ -38,13 +38,16 @@ describe('<SearchInput />', () => {
   //   expect(wrapper.find('.fa.fa-search')).to.have.length(1);
   // });
 
-  it('calls onBlur/onFocus when input focus is gained/lost', () => {
+  it('calls onBlur/onFocus when input focus is gained/lost', (done) => {
     const onBlur = sinon.spy();
     const onFocus = sinon.spy();
     const wrapper = searchInput({ onBlur, onFocus });
     wrapper.find('input').simulate('blur');
-    expect(onBlur).to.have.property('callCount', 1);
-    wrapper.find('input').simulate('focus');
-    expect(onFocus).to.have.property('callCount', 1);
+    setTimeout(() => {
+      expect(onBlur).to.have.property('callCount', 1);
+      wrapper.find('input').simulate('focus');
+      expect(onFocus).to.have.property('callCount', 1);
+      done();
+    }, 120);
   });
 });
