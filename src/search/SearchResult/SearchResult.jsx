@@ -32,13 +32,17 @@ const SearchResult = (props) => {
   );
 };
 
-SearchResult.propTypes = {
+export const resultProps = {
   id: PropTypes.number.isRequired,
-  onClick: PropTypes.func.isRequired,
   previewTemplate: PropTypes.string.isRequired,
   displayName: PropTypes.string.isRequired,
   status: PropTypes.string.isRequired,
   game: PropTypes.string.isRequired,
+};
+
+SearchResult.propTypes = {
+  ...resultProps,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default SearchResult;

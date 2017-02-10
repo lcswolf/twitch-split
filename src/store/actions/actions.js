@@ -76,3 +76,9 @@ export const SEARCH_RESULTS_SHOW = 'SEARCH_RESULTS_SHOW';
 export const searchResultsShow = () => ({
   type: SEARCH_RESULTS_SHOW,
 });
+
+export const STREAM_SELECT = 'STREAM_SELECT';
+export const streamSelect = id => ({
+  type: STREAM_SELECT,
+  id,
+});

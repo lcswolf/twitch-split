@@ -1,3 +1,4 @@
-import SearchResult from './SearchResult';
+import SearchResult, { resultProps } from './SearchResult';
 
 export default SearchResult;
+export { resultProps };

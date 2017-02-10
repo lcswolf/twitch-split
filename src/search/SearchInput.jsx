@@ -15,6 +15,14 @@ class SearchInput extends Component {
     this.input.focus();
   }
 
+  blur = () => {
+    // Add a small delay so click handlers in other components have a chance to
+    // fire.
+    setTimeout(() => {
+      this.props.onBlur();
+    }, 100);
+  }
+
   render() {
     return (
       <div
@@ -27,7 +35,7 @@ class SearchInput extends Component {
             type="text"
             ref={(c) => { this.input = c; }}
             onChange={(e) => { this.props.onChange({ value: e.target.value }); }}
-            onBlur={() => { this.props.onBlur(); }}
+            onBlur={this.blur}
             onFocus={() => { this.props.onFocus(); }}
           />
         </form>
