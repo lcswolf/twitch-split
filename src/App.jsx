@@ -1,22 +1,18 @@
-import React, { Component } from 'react';
-import './app.scss';
-import placeholder from './350.jpg';
+import React from 'react';
+import { Provider } from 'react-redux';
+import { hashHistory, Route, Router } from 'react-router';
+import store from './store';
+import { SearchView } from './search';
 
-export default class App extends Component {
-  constructor() {
-    super();
-    this.state = { count: 0 };
-    setInterval(() => {
-      this.setState({ count: this.state.count + 1 });
-    }, 1000);
-  }
+// function onEnter(nextState, replace) {
+//   console.log('nextState', nextState, 'replace', replace); // eslint-disable-line
+// }
 
-  render() {
-    return (
-      <div className="hello-world">
-        Hello world: {this.state.count}
-        <img src={placeholder} alt="placeholder" />
-      </div>
-    );
-  }
-}
+export default () => (
+  <Provider store={store}>
+    <Router history={hashHistory}>
+      <Route path="/" component={SearchView} />
+      {/* <Route path="/*" component={Search} onEnter={onEnter} />*/}
+    </Router>
+  </Provider>
+);

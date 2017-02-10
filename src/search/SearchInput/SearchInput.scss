@@ -1,0 +1,19 @@
+.search-input {
+  position: relative;
+
+  input {
+    width: 100%;
+    height: 50px;
+    padding-left: 48px;
+    font-size: 1.5rem;
+  }
+
+  ::before {
+    content: "\F002";
+    font-family: FontAwesome;
+    position: absolute;
+    font-size: 1.5rem;
+    top: 12px;
+    left: 15px;
+  }
+}

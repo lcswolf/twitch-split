@@ -1,0 +1,16 @@
+@import "../../assets/css/mixins/colors.scss";
+
+.selected-results {
+  height: 120px;
+
+  .go-button {
+    color: $accent;
+    border: 0;
+    background: transparent;
+    height: 90px;
+    font-size: 5rem;
+    vertical-align: top;
+    outline: none;
+    cursor: pointer;
+  }
+}

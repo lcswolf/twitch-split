@@ -1,0 +1,40 @@
+@import "../../assets/css/mixins/colors";
+$preview-image-width: 160px;
+$preview-image-height: 90px;
+$vertical-padding: 10px;
+$hover-color: $accent;
+
+.search-result {
+  height: $preview-image-height + ($vertical-padding * 2);
+  padding: $vertical-padding 20px;
+  list-style: none;
+  text-align: left;
+  cursor: pointer;
+  color: $accent;
+
+  &:hover {
+    color: white;
+    background-color: $hover-color;
+  }
+
+  &__content {
+    height: 100%;
+    padding-left: $preview-image-width + 20;
+    background-repeat: no-repeat;
+  }
+
+  &__section {
+    padding-top: 7px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    &--name {
+      font-size: 1.2rem;
+    }
+
+    &--game {
+      font-style: italic;
+    }
+  }
+}

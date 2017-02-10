@@ -8,6 +8,8 @@ const buildPaths = require('./buildPaths');
 const webpackDevConfig = {
   entry: {
     app: [
+      'babel-polyfill',
+
       // Activate HMR for React.
       // https://webpack.js.org/guides/hmr-react/
       'react-hot-loader/patch',
