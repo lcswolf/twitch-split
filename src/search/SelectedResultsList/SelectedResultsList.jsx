@@ -1,5 +1,6 @@
 // import React, { PropTypes } from 'react';
 import React from 'react';
+import { Link } from 'react-router';
 import SelectedResult from '../SelectedResult';
 // import { resultProps } from '../SearchResult';
 import './SelectedResultsList.scss';
@@ -13,10 +14,17 @@ const SelectedResultsList = (props) => {
     </span>
   ));
 
+  const streamsURL = props.results.reduce(
+    (url, result) => `${url}/${result.name.toLowerCase()}`,
+    '',
+  );
+
   let goButton = (
-    <button className="go-button">
-      <i className="fa fa-arrow-circle-right" aria-hidden="true" />
-    </button>
+    <Link to={streamsURL}>
+      <button className="go-button">
+        <i className="fa fa-arrow-right" aria-hidden="true" />
+      </button>
+    </Link>
   );
   if (selectedResults.length < 2) goButton = <div />;
 
