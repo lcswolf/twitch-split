@@ -7,7 +7,7 @@ const Streams = (props) => {
     <iframe
       key={stream.id}
       className="streams__stream"
-      src={`http://player.twitch.tv/?channel=${stream.name}`}
+      src={`https://player.twitch.tv/?channel=${stream.name}`}
       frameBorder="0"
       scrolling="no"
       allowFullScreen="true"
