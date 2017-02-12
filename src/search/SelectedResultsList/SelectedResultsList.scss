@@ -4,7 +4,6 @@
   height: 120px;
 
   .go-button {
-    color: $accent;
     border: 0;
     background: transparent;
     height: 90px;
@@ -12,5 +11,9 @@
     vertical-align: top;
     outline: none;
     cursor: pointer;
+
+    &:hover {
+      color: $accent;
+    }
   }
 }
