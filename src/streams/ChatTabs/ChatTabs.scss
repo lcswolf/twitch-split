@@ -1,0 +1,35 @@
+.chat-tabs {
+  @mixin underline() {
+    border-bottom: grey 5px solid;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0 0;
+    text-align: center;
+  }
+
+  &__tab {
+    display: inline;
+    flex-grow: 1;
+    white-space: nowrap;
+    border-right: grey 1px solid;
+    padding: 5px 10px;
+    cursor: default;
+
+    &--last {
+      border-right: none;
+    }
+
+    &--active {
+      @include underline();
+      cursor: inherit;
+    }
+
+    &:hover {
+      @include underline();
+    }
+  }
+}

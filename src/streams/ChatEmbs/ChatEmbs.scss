@@ -1,0 +1,8 @@
+.chat-embs {
+  display: flex;
+  flex-direction: column;
+
+  &__chat {
+    flex-grow: 1;
+  }
+}

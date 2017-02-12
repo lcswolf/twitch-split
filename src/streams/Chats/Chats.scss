@@ -1,0 +1,8 @@
+.chats {
+  display: flex;
+  flex-direction: column;
+
+  &__panels {
+    flex-grow: 1;
+  }
+}
