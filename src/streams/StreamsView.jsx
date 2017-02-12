@@ -1,24 +1,48 @@
-import React from 'react';
+import React, { Component } from 'react';
 import uuid from 'uuid/v4';
-import Chats from './Chats';
+import parseSplat from './parseSplat';
 import './StreamsView.scss';
 
-const streams = [
-  'mrwaynz',
-  'pepperjc',
-  'bbyong7',
-].map(stream => ({ name: stream, id: uuid() }));
+import Streams from './Streams';
+import Chats from './Chats';
 
-// {console.log(props.params.splat)}
+// Generate list of streams from URL.
+function parseStreams(splat) {
+  return parseSplat(splat).map(
+    stream => ({ name: stream, id: uuid() }),
+  );
+}
+
 /* eslint-disable react/prop-types, no-console */
-export default () => (
-  <div className="streams-view">
-    <div className="streams-view__streams">
-      Streams view placeholder: <br />
-    </div>
-    <Chats
-      className="streams-view__chats"
-      streams={streams}
-    />
-  </div>
-);
+class StreamsView extends Component {
+  state = {
+    streams: parseStreams(this.props.params.splat),
+    lastSplat: this.props.params.splat,
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.state.lastSplat !== nextProps.params.splat) {
+      this.setState({
+        streams: parseStreams(nextProps.params.splat),
+        lastSplat: nextProps.params.splat,
+      });
+    }
+  }
+
+  render() {
+    return (
+      <div className="streams-view">
+        <Streams
+          className="streams-view__streams"
+          streams={this.state.streams}
+        />
+        <Chats
+          className="streams-view__chats"
+          streams={this.state.streams}
+        />
+      </div>
+    );
+  }
+}
+
+export default StreamsView;

@@ -1,0 +1,8 @@
+.streams {
+  display: flex;
+  flex-direction: column;
+
+  &__stream {
+    flex-grow: 1;
+  }
+}
