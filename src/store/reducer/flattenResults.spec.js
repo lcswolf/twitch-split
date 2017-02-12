@@ -15,6 +15,7 @@ describe('flattenResults', () => {
     expect(result.id).to.equal(actual._id);
     expect(result.previewTemplate).to.equal(actual.preview.template);
     expect(result.displayName).to.equal(actual.channel.display_name);
+    expect(result.name).to.equal(actual.channel.name);
     expect(result.status).to.equal(actual.channel.status);
     expect(result.game).to.equal(actual.game);
   });

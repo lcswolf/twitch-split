@@ -4,6 +4,7 @@ export default function flattenResults(resultsJSON) {
     id: stream._id,
     previewTemplate: stream.preview.template,
     displayName: stream.channel.display_name,
+    name: stream.channel.name,
     status: stream.channel.status,
     game: stream.game,
   }));

@@ -15,7 +15,7 @@ const SelectedResultsList = (props) => {
   ));
 
   const streamsURL = props.results.reduce(
-    (url, result) => `${url}/${result.displayName.toLowerCase()}`,
+    (url, result) => `${url}/${result.name.toLowerCase()}`,
     '',
   );
 
