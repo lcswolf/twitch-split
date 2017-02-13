@@ -13,8 +13,6 @@ const SelectedResult = (props) => {
       className="selected-result"
       style={{
         backgroundImage: `url(${preview})`,
-        width: '160px',
-        height: '90px',
       }}
       onClick={() => { props.onResultClicked(props.id); }}
     >

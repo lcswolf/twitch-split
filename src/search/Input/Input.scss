@@ -1,4 +1,12 @@
+@import "../../assets/css/mixins/colors";
+$hover-color: $accent;
+
 .search-input {
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   position: relative;
 
   input {
@@ -6,6 +14,15 @@
     height: 50px;
     padding-left: 48px;
     font-size: 1.5rem;
+    border: none;
+    border-bottom: 1px solid;
+    outline: none;
+
+    &:hover, &:focus {
+      border-color: $accent;
+      border-width: 2px;
+      color: blue;
+    }
   }
 
   ::before {
@@ -13,7 +30,7 @@
     font-family: FontAwesome;
     position: absolute;
     font-size: 1.5rem;
-    top: 12px;
-    left: 15px;
+    left: 5px;
+    bottom: 10px;
   }
 }

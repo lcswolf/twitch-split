@@ -1,7 +1,8 @@
 @import "../../assets/css/mixins/colors.scss";
+@import "../../assets/css/mixins/keylines.scss";
 
 .selected-results {
-  height: 120px;
+  padding-top: 50px;
   text-align: center;
 
   .go-button {
@@ -12,6 +13,10 @@
     vertical-align: top;
     outline: none;
     cursor: pointer;
+    @include respond-to(mobile) {
+      height: 65px;
+      font-size: 3rem;
+    }
 
     &:hover {
       color: $accent;

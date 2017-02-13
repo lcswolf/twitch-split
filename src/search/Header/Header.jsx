@@ -8,9 +8,11 @@ class Header extends Component {
 
   render() {
     return (
-      <h1 className={`search-header ${this.props.className}`}>
-        twitch split
-      </h1>
+      <div className={`search-header ${this.props.className}`}>
+        <h1>
+          twitch split
+        </h1>
+      </div>
     );
   }
 }
