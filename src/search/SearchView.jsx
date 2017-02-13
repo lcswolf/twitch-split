@@ -6,9 +6,9 @@ import './SearchView.scss';
 
 const SearchView = () => (
   <div className="search-view">
-    <SearchHeader className="search-view__header" />
-    <SelectedResultsList />
-    <div className="search-view__form-wrapper">
+    <div className="container">
+      <SearchHeader className="search-view__header" />
+      <SelectedResultsList />
       <SearchForm />
     </div>
   </div>
