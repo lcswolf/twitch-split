@@ -1,8 +1,8 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import SearchResultsList from './SearchResultsList';
-import SearchResult from '../SearchResult';
+import ResultsList from './ResultsList';
+import Result from '../Result';
 
 const sampleResults = [
   { id: 1, previewTemplate: '', displayName: '', status: '', game: '' },
@@ -10,10 +10,10 @@ const sampleResults = [
 sampleResults.push(sampleResults[0]);
 sampleResults[1].id += 1;
 
-function searchResultsList(props) {
+function resultsList(props) {
   const onClick = () => {};
 
-  return shallow(<SearchResultsList
+  return shallow(<ResultsList
     results={sampleResults}
     onResultClicked={onClick}
     showResultsList={false}
@@ -21,26 +21,26 @@ function searchResultsList(props) {
   />);
 }
 
-describe('<SearchResultsList />', () => {
-  it('renders two <SearchResult>s', () => {
-    const wrapper = searchResultsList();
-    expect(wrapper.find(SearchResult)).to.have.length(2);
+describe('<ResultsList />', () => {
+  it('renders two <Result>s', () => {
+    const wrapper = resultsList();
+    expect(wrapper.find(Result)).to.have.length(2);
   });
 
   it('should be hidden when showResultsList is false', () => {
-    const wrapper = searchResultsList({ showResultsList: false });
+    const wrapper = resultsList({ showResultsList: false });
     const el = wrapper.find('.result-list').node;
     expect(el.props.style.display).to.equal('none');
   });
 
   it('should be visible when showResultsList is true', () => {
-    const wrapper = searchResultsList({ showResultsList: true });
+    const wrapper = resultsList({ showResultsList: true });
     const el = wrapper.find('.result-list').node;
     expect(el.props.style.display).to.not.exist;
   });
 
   it('should have maxHeight set', () => {
-    const wrapper = searchResultsList();
+    const wrapper = resultsList();
     const el = wrapper.find('.result-list').node;
     expect(el.props.style.maxHeight).to.exist;
   });

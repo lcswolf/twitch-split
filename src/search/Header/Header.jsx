@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import './SearchHeader.scss';
+import './Header.scss';
 
-class SearchHeader extends Component {
+class Header extends Component {
   static defaultProps = { className: '' };
 
   static propTypes = { className: PropTypes.node };
@@ -15,4 +15,4 @@ class SearchHeader extends Component {
   }
 }
 
-export default SearchHeader;
+export default Header;

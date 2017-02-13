@@ -1,13 +1,13 @@
 import React, { Component, PropTypes } from 'react';
-import SearchResult, { resultProps } from '../SearchResult';
-import './SearchResultsList.scss';
+import Result, { resultProps } from '../Result';
+import './ResultsList.scss';
 
 export const propTypes = {
   results: PropTypes.arrayOf(PropTypes.shape(resultProps)).isRequired,
   showResultsList: PropTypes.bool.isRequired,
 };
 
-class SearchResultList extends Component {
+class ResultList extends Component {
   static propTypes = {
     ...propTypes,
     onResultClicked: PropTypes.func.isRequired,
@@ -35,8 +35,8 @@ class SearchResultList extends Component {
   }
 
   render() {
-    const searchResults = this.props.results.map(stream => (
-      <SearchResult
+    const results = this.props.results.map(stream => (
+      <Result
         key={stream.id}
         {...stream}
         onClick={this.props.onResultClicked}
@@ -55,11 +55,11 @@ class SearchResultList extends Component {
         ref={(div) => { this.div = div; }}
       >
         <ul>
-          {searchResults}
+          {results}
         </ul>
       </div>
     );
   }
 }
 
-export default SearchResultList;
+export default ResultList;

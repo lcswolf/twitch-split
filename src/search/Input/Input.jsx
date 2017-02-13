@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import './SearchInput.scss';
+import './Input.scss';
 
-class SearchInput extends Component {
+class Input extends Component {
   static propTypes = {
     onChange: PropTypes.func.isRequired,
     onBlur: PropTypes.func.isRequired,
@@ -48,4 +48,4 @@ class SearchInput extends Component {
   }
 }
 
-export default SearchInput;
+export default Input;

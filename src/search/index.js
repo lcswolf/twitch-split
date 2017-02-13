@@ -1,7 +1,4 @@
-import SearchHeader from './SearchHeader';
 import SearchView from './SearchView';
 
-export {
-  SearchHeader,
-  SearchView,
-};
+/* eslint-disable import/prefer-default-export */
+export { SearchView };

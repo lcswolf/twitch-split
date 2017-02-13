@@ -3,9 +3,9 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import { spy } from 'sinon';
 
-import SearchResult from './SearchResult';
+import Result from './Result';
 
-describe('<SearchResult />', () => {
+describe('<Result />', () => {
   let wrapper;
   let onClick;
   const expectedID = 123;
@@ -16,7 +16,7 @@ describe('<SearchResult />', () => {
 
   beforeEach(() => {
     onClick = spy();
-    wrapper = shallow(<SearchResult
+    wrapper = shallow(<Result
       id={expectedID}
       onClick={onClick}
       previewTemplate="http://example.com/image_{width}x{height}"

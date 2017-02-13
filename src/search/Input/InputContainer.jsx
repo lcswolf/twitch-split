@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { actions } from '../../store';
-import SearchInput from './SearchInput';
+import Input from './Input';
 
-const SearchInputContainer = props => (
-  <SearchInput
+const InputContainer = props => (
+  <Input
     onChange={({ value }) => {
       props.dispatch(actions.setCurrentSearch(value));
       props.dispatch(actions.streamSearch(value));
@@ -22,14 +22,14 @@ const SearchInputContainer = props => (
   />
 );
 
-SearchInputContainer.propTypes = {
+InputContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
   className: PropTypes.string,
   currentSearch: PropTypes.string.isRequired,
   disabled: PropTypes.bool.isRequired,
 };
 
-SearchInputContainer.defaultProps = {
+InputContainer.defaultProps = {
   className: '',
 };
 
@@ -39,4 +39,4 @@ const mapStateToProps = (state, props) => ({
   disabled: state.selectedStreams.length > 2,
 });
 
-export default connect(mapStateToProps)(SearchInputContainer);
+export default connect(mapStateToProps)(InputContainer);
