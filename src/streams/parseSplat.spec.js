@@ -4,6 +4,7 @@ import parseSplat from './parseSplat';
 
 const tests = {
   'escapeaoe/mrwaynz/theslowcss': ['escapeaoe', 'mrwaynz', 'theslowcss'],
+  'esc____oe/mrwaynz/theslowcss': ['esc____oe', 'mrwaynz', 'theslowcss'],
   'escAPEaoe/Mrwaynz/thESlowcss': ['escapeaoe', 'mrwaynz', 'theslowcss'],
   'es9999aoe/Mrwaynz/thESlowcss': ['es9999aoe', 'mrwaynz', 'theslowcss'],
   'escAPEaoe/Mrwaynz/th%Slowcss': [],
