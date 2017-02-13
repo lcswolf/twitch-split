@@ -3,10 +3,10 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
-import SearchInput from './SearchInput';
+import Input from './Input';
 
-const searchInput = props => (
-  shallow(<SearchInput
+const input = props => (
+  shallow(<Input
     onChange={() => {}}
     onBlur={() => {}}
     onFocus={() => {}}
@@ -14,34 +14,29 @@ const searchInput = props => (
   />)
 );
 
-describe('<SearchInput />', () => {
+describe('<Input />', () => {
   it('adds className prop to div', () => {
-    const wrapper = searchInput({ className: 'test' });
+    const wrapper = input({ className: 'test' });
     expect(wrapper.find('.search-input.test')).to.have.length(1);
   });
 
   it('should prevent form submission', () => {
-    const wrapper = searchInput();
+    const wrapper = input();
     expect(wrapper.find('.search-input form').props().onSubmit).to.exist;
   });
 
   it('calls onChange on text changes', () => {
     const onChange = sinon.spy();
-    const wrapper = searchInput({ onChange });
+    const wrapper = input({ onChange });
     wrapper.find('input').simulate('change', { target: { value: 'test' } });
     expect(onChange).to.have.property('callCount', 1);
     expect(onChange.calledWith({ value: 'test' })).to.be.true;
   });
 
-  // it('renders search icon', () => {
-  //   const wrapper = searchInput();
-  //   expect(wrapper.find('.fa.fa-search')).to.have.length(1);
-  // });
-
   it('calls onBlur/onFocus when input focus is gained/lost', (done) => {
     const onBlur = sinon.spy();
     const onFocus = sinon.spy();
-    const wrapper = searchInput({ onBlur, onFocus });
+    const wrapper = input({ onBlur, onFocus });
     wrapper.find('input').simulate('blur');
     setTimeout(() => {
       expect(onBlur).to.have.property('callCount', 1);

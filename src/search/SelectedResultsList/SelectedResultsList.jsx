@@ -27,9 +27,11 @@ const SelectedResultsList = (props) => {
     </Link>
   );
   if (selectedResults.length < 2) goButton = <div />;
+  const style = {};
+  if (!props.visible) style.display = 'none';
 
   return (
-    <div className="selected-results">
+    <div className="selected-results" style={style}>
       {selectedResults}
       {goButton}
     </div>

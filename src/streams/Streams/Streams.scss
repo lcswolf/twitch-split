@@ -4,5 +4,9 @@
 
   &__stream {
     flex-grow: 1;
+
+    // Support for Internet Explorer
+    width: 100%;
+    height: 100%;
   }
 }

@@ -9,7 +9,7 @@
 // Sanitize
 export default function parseSplat(splat) {
   // Accept only ASCII sections (/asdfasd/asdf)
-  if (!/^([a-zA-Z0-9]{4,}\/?)+$/.test(splat)) return [];
+  if (!/^([a-zA-Z0-9_]{4,}\/?)+$/.test(splat)) return [];
   return splat
     .toLowerCase()
     .split('/')

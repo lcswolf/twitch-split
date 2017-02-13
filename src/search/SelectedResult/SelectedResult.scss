@@ -1,8 +1,16 @@
+@import "../../assets/css/mixins/keylines.scss";
+
 .selected-result {
   position: relative;
   display: inline-block;
   border: solid 1px black;
   cursor: pointer;
+  width: 160px;
+  height: 90px;
+  @include respond-to(mobile) {
+    width: 100px;
+    height: 65px;
+  }
 
   &__caption {
     position: absolute;

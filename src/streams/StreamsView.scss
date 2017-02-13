@@ -4,10 +4,10 @@
   display: flex;
 
   &__streams {
-    flex-basis: 75%;
+    flex-grow: 1;
   }
 
   &__chats {
-    flex-basis: 25%;
+    // flex-basis: 23%;
   }
 }

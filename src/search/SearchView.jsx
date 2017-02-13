@@ -1,15 +1,19 @@
 import React from 'react';
-import SearchHeader from './SearchHeader';
+import Header from './Header';
 import SelectedResultsList from './SelectedResultsList';
-import SearchForm from './SearchForm';
+import Input from './Input';
+import ResultsList from './ResultsList';
+import Description from './Description';
 import './SearchView.scss';
 
 const SearchView = () => (
   <div className="search-view">
-    <SearchHeader className="search-view__header" />
-    <SelectedResultsList />
-    <div className="search-view__form-wrapper">
-      <SearchForm />
+    <div className="search-view__container">
+      <Header className="search-view__header" />
+      <Input />
+      <ResultsList />
+      <SelectedResultsList />
+      <Description />
     </div>
   </div>
 );

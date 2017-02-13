@@ -1,16 +1,21 @@
+@import "../assets/css/mixins/keylines.scss";
+
 .search-view {
   height: 100vh;
   max-height: 100vh;
-  text-align: center;
-  margin: 0 20px;
+  padding: 10px;
 
-  &__header {
-    padding-top: 100px;
-    padding-bottom: 20px;
-  }
-
-  &__form-wrapper {
+  &__container {
+    display: flex;
+    flex-direction: column;
     margin: 0 auto;
     max-width: 600px;
+    height: 100%;
   }
+
+  &__header {
+    flex-basis: 30%;
+    @include respond-to(mobile) { flex-basis: 2.5rem; }
+  }
+
 }

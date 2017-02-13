@@ -1,51 +1,52 @@
 import React, { Component, PropTypes } from 'react';
-import SearchResult, { resultProps } from '../SearchResult';
-import './SearchResultsList.scss';
+import Result, { resultProps } from '../Result';
+import './ResultsList.scss';
 
 export const propTypes = {
   results: PropTypes.arrayOf(PropTypes.shape(resultProps)).isRequired,
   showResultsList: PropTypes.bool.isRequired,
 };
 
-class SearchResultList extends Component {
+class ResultList extends Component {
   static propTypes = {
     ...propTypes,
     onResultClicked: PropTypes.func.isRequired,
   };
-  state = { maxHeight: 100 };
+  // state = { maxHeight: 100 };
 
   // Prevent results list from extending the height of the page by setting its
   // max height to less than the page height.
   componentDidMount() {
-    window.addEventListener('resize', this.updateMaxHeight);
-    setTimeout(() => {
-      this.updateMaxHeight();
-    }, 1);
+    // window.addEventListener('resize', this.updateMaxHeight);
+    // setTimeout(() => {
+    //   this.updateMaxHeight();
+    // }, 1);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.updateMaxHeight);
+    // window.removeEventListener('resize', this.updateMaxHeight);
   }
 
   updateMaxHeight = () => {
-    const rect = this.div.getBoundingClientRect();
-    this.setState({
-      maxHeight: window.innerHeight - rect.top - 20,
-    });
+    // const rect = this.div.getBoundingClientRect();
+    // this.setState({
+    //   maxHeight: window.innerHeight - rect.top - 20,
+    // });
   }
 
   render() {
-    const searchResults = this.props.results.map(stream => (
-      <SearchResult
+    const results = this.props.results.map(stream => (
+      <Result
         key={stream.id}
         {...stream}
         onClick={this.props.onResultClicked}
       />
     ));
 
-    const style = {
-      maxHeight: `${this.state.maxHeight}px`,
-    };
+    // const style = {
+    //   maxHeight: `${this.state.maxHeight}px`,
+    // };
+    const style = {};
     if (!this.props.showResultsList) style.display = 'none';
 
     return (
@@ -55,11 +56,11 @@ class SearchResultList extends Component {
         ref={(div) => { this.div = div; }}
       >
         <ul>
-          {searchResults}
+          {results}
         </ul>
       </div>
     );
   }
 }
 
-export default SearchResultList;
+export default ResultList;

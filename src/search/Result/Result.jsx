@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
-import './SearchResult.scss';
+import './Result.scss';
 
-const SearchResult = (props) => {
+const Result = (props) => {
   const preview = props.previewTemplate
     .replace('{width}', '160')
     .replace('{height}', '90');
@@ -40,9 +40,9 @@ export const resultProps = {
   game: PropTypes.string.isRequired,
 };
 
-SearchResult.propTypes = {
+Result.propTypes = {
   ...resultProps,
   onClick: PropTypes.func.isRequired,
 };
 
-export default SearchResult;
+export default Result;

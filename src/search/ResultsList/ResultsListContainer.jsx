@@ -1,20 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { actions } from '../../store';
-import SearchResultsList, { propTypes } from './SearchResultsList';
+import ResultsList, { propTypes } from './ResultsList';
 
-const SearchResultsListContainer = props => (
-  <SearchResultsList
+const ResultsListContainer = props => (
+  <ResultsList
     results={props.results}
     onResultClicked={(id) => { props.dispatch(actions.streamSelect(id)); }}
     showResultsList={props.showResultsList}
   />
 );
-SearchResultsListContainer.propTypes = propTypes;
+ResultsListContainer.propTypes = propTypes;
 
 const mapStateToProps = state => ({
   results: state.queries[state.currentSearch] || [],
   showResultsList: state.showSearchResults,
 });
 
-export default connect(mapStateToProps)(SearchResultsListContainer);
+export default connect(mapStateToProps)(ResultsListContainer);

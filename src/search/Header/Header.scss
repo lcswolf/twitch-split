@@ -1,0 +1,15 @@
+@import "../../assets/css/mixins/keylines.scss";
+
+.search-header {
+  align-self: center;
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  h1 {
+    font-size: 6rem;
+    @include respond-to(mobile) { font-size: 2rem; }
+  }
+}

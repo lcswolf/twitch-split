@@ -18,6 +18,7 @@ class StreamsView extends Component {
   state = {
     streams: parseStreams(this.props.params.splat),
     lastSplat: this.props.params.splat,
+    showChats: true,
   }
 
   componentWillReceiveProps(nextProps) {
