@@ -38,10 +38,4 @@ describe('<ResultsList />', () => {
     const el = wrapper.find('.result-list').node;
     expect(el.props.style.display).to.not.exist;
   });
-
-  it('should have maxHeight set', () => {
-    const wrapper = resultsList();
-    const el = wrapper.find('.result-list').node;
-    expect(el.props.style.maxHeight).to.exist;
-  });
 });
