@@ -1,8 +1,28 @@
+@import "../../assets/css/mixins/colors.scss";
+
 .description {
-  padding: 50px 10px;
   font-size: 1.2rem;
   font-family: 'Raleway', sans-serif;
-  p {
-    padding: 5px 0;
+  ul {
+    list-style: none;
+    padding-top: 50px;
+  }
+
+  li {
+    padding-bottom: 50px;
+
+    &::before {
+      display: inline-block;
+      width: 1.5rem;
+      margin-left: -1.5rem;
+      font-family: 'FontAwesome';
+      font-size: .8rem;
+      content: "\f111";
+      color: $accent;
+      line-height: 1.5rem;
+      vertical-align: top;
+    }
+
+    &:last-of-type { padding-bottom: 0; }
   }
 }
