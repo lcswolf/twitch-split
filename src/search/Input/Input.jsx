@@ -22,12 +22,12 @@ class Input extends Component {
     // fire.
     setTimeout(() => {
       this.props.onBlur();
-    }, 100);
+    }, 300);
   }
 
   render() {
     return (
-      <div
+      <section
         className={`search-input ${this.props.className}`}
       >
         <form
@@ -43,7 +43,7 @@ class Input extends Component {
             disabled={this.props.disabled}
           />
         </form>
-      </div>
+      </section>
     );
   }
 }

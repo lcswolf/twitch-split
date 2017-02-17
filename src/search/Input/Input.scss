@@ -17,13 +17,11 @@ $hover-color: $accent;
     padding-left: 48px;
     font-size: 1.5rem;
     border: none;
-    // border-bottom: 1px solid;
     outline: none;
 
     &:hover, &:focus {
       border-color: $accent;
       border-width: 2px;
-      color: blue;
     }
   }
 
@@ -32,7 +30,7 @@ $hover-color: $accent;
     font-family: FontAwesome;
     position: absolute;
     font-size: 1.5rem;
-    left: 5px;
+    left: 14px;
     bottom: 10px;
   }
 }

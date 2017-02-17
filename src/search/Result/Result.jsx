@@ -12,7 +12,7 @@ const Result = (props) => {
       className="search-result"
       onClick={() => { props.onClick(props.id); }}
     >
-      <div
+      <article
         className="search-result__content"
         style={{ backgroundImage: `url(${preview})` }}
       >
@@ -27,7 +27,7 @@ const Result = (props) => {
         <p className="search-result__section search-result__section--game">
           {props.game}
         </p>
-      </div>
+      </article>
     </li>
   );
 };

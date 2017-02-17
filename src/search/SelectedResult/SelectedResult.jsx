@@ -9,7 +9,7 @@ const SelectedResult = (props) => {
 
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-    <div
+    <article
       className="selected-result"
       style={{
         backgroundImage: `url(${preview})`,
@@ -24,7 +24,7 @@ const SelectedResult = (props) => {
         className="selected-result__cross fa fa-times"
         aria-hidden="true"
       />
-    </div>
+    </article>
   );
 };
 

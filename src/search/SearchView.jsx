@@ -5,7 +5,6 @@ import Input from './Input';
 import ResultsList from './ResultsList';
 import Description from './Description';
 import './SearchView.scss';
-// import background from './background.svg';
 
 const SearchView = () => (
   <div className="search-view">
