@@ -18,7 +18,7 @@ class Chats extends Component {
 
   render() {
     return (
-      <div className={`${this.props.className} chats`}>
+      <aside className={`${this.props.className} chats`}>
         <ChatTabs
           className="chats__tabs"
           streams={this.props.streams}
@@ -30,7 +30,7 @@ class Chats extends Component {
           streams={this.props.streams}
           active={this.state.active}
         />
-      </div>
+      </aside>
     );
   }
 }
