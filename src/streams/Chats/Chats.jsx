@@ -9,27 +9,45 @@ class Chats extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { active: 0 };
+    this.state = {
+      active: 0,
+      collapsed: false,
+    };
   }
 
   tabClicked = (index) => {
     this.setState({ active: index });
   }
 
+  toggleCollapsed = () => {
+    this.setState({ collapsed: !this.state.collapsed });
+  }
+
   render() {
+    const style = {};
+    if (this.state.collapsed) style.display = 'none';
+    const arrow = this.state.collapsed ? 'left' : 'right';
+
     return (
       <aside className={`${this.props.className} chats`}>
-        <ChatTabs
-          className="chats__tabs"
-          streams={this.props.streams}
-          active={this.state.active}
-          tabClicked={this.tabClicked}
-        />
-        <ChatEmbs
-          className="chats__panels"
-          streams={this.props.streams}
-          active={this.state.active}
-        />
+        <div className="chats__collapse">
+          <button onClick={this.toggleCollapsed}>
+            <i className={`fa fa-arrow-${arrow}`} aria-hidden="true" />
+          </button>
+        </div>
+        <div className="chats__wrapper" style={style}>
+          <ChatTabs
+            className="chats__tabs"
+            streams={this.props.streams}
+            active={this.state.active}
+            tabClicked={this.tabClicked}
+          />
+          <ChatEmbs
+            className="chats__panels"
+            streams={this.props.streams}
+            active={this.state.active}
+          />
+        </div>
       </aside>
     );
   }
