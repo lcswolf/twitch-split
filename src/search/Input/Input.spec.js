@@ -32,17 +32,4 @@ describe('<Input />', () => {
     expect(onChange).to.have.property('callCount', 1);
     expect(onChange.calledWith({ value: 'test' })).to.be.true;
   });
-
-  it('calls onBlur/onFocus when input focus is gained/lost', (done) => {
-    const onBlur = sinon.spy();
-    const onFocus = sinon.spy();
-    const wrapper = input({ onBlur, onFocus });
-    wrapper.find('input').simulate('blur');
-    setTimeout(() => {
-      expect(onBlur).to.have.property('callCount', 1);
-      wrapper.find('input').simulate('focus');
-      expect(onFocus).to.have.property('callCount', 1);
-      done();
-    }, 120);
-  });
 });

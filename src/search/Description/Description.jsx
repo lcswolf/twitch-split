@@ -3,6 +3,7 @@ import './Description.scss';
 
 /* eslint-disable react/prop-types */
 const Description = (props) => {
+  // Hide when search results are visible.
   const style = {};
   if (!props.visible) style.display = 'none';
 
