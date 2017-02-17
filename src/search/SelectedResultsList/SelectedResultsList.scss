@@ -2,8 +2,9 @@
 @import "../../assets/css/mixins/keylines.scss";
 
 .selected-results {
-  padding-top: 50px;
+  padding-top: 30px;
   text-align: center;
+  @include respond-to(mobile) { padding-top: 10px; }
 
   .go-button {
     border: 0;

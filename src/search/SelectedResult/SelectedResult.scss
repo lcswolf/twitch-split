@@ -1,15 +1,19 @@
-@import "../../assets/css/mixins/keylines.scss";
-
 .selected-result {
   position: relative;
   display: inline-block;
   border: solid 1px black;
   cursor: pointer;
-  width: 160px;
+  background-size: cover;
   height: 90px;
-  @include respond-to(mobile) {
-    width: 100px;
-    height: 65px;
+  margin-right: 2%;
+
+  // Space results out in thirds, leaving space for 2% margins on the first two
+  // results.
+  width: 32%;
+
+  // Remove margin from last result.
+  &:last-of-type {
+    margin-right: 0;
   }
 
   &__caption {
@@ -24,6 +28,9 @@
       rgba(0, 0, 0, .5)
     );
     letter-spacing: .05rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &__cross {
