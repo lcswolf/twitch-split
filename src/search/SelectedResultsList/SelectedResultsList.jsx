@@ -1,17 +1,12 @@
-// import React, { PropTypes } from 'react';
 import React from 'react';
 import { Link } from 'react-router';
 import SelectedResult from '../SelectedResult';
-// import { resultProps } from '../SearchResult';
 import './SelectedResultsList.scss';
 
 /* eslint-disable react/prop-types */
 const SelectedResultsList = (props) => {
   const selectedResults = props.results.map(result => (
-    <span key={result.id}>
-      <SelectedResult {...result} onResultClicked={props.onResultClicked} />
-      &nbsp;
-    </span>
+    <SelectedResult key={result.id} {...result} onResultClicked={props.onResultClicked} />
   ));
 
   const streamsURL = props.results.reduce(
@@ -22,6 +17,7 @@ const SelectedResultsList = (props) => {
   let goButton = (
     <Link to={streamsURL}>
       <button className="go-button">
+        split
         <i className="fa fa-arrow-right" aria-hidden="true" />
       </button>
     </Link>
@@ -31,12 +27,13 @@ const SelectedResultsList = (props) => {
   if (!props.visible) style.display = 'none';
 
   return (
-    <div className="selected-results" style={style}>
-      {selectedResults}
+    <section className="selected-results" style={style}>
+      <div>
+        {selectedResults}
+      </div>
       {goButton}
-    </div>
+    </section>
   );
 };
-// SelectedResultsList.propTypes = PropTypes.arrayOf(PropTypes.shape(resultProps));
 
 export default SelectedResultsList;

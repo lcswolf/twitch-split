@@ -32,7 +32,7 @@ class StreamsView extends Component {
 
   render() {
     return (
-      <div className="streams-view">
+      <main className="streams-view">
         <Streams
           className="streams-view__streams"
           streams={this.state.streams}
@@ -41,7 +41,7 @@ class StreamsView extends Component {
           className="streams-view__chats"
           streams={this.state.streams}
         />
-      </div>
+      </main>
     );
   }
 }

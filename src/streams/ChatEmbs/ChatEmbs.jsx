@@ -17,9 +17,9 @@ const ChatEmbs = (props) => {
     />
   ));
   return (
-    <div className={`${props.className} chat-embs`}>
+    <section className={`${props.className} chat-embs`}>
       {chats}
-    </div>
+    </section>
   );
 };
 ChatEmbs.propTypes = propTypes;

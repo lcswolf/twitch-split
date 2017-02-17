@@ -24,9 +24,9 @@ const ChatTabs = (props) => {
   });
 
   return (
-    <div className={`${props.className} chat-tabs`}>
+    <nav className={`${props.className} chat-tabs`}>
       <ul>{tabs}</ul>
-    </div>
+    </nav>
   );
 };
 ChatTabs.propTypes = propTypes;

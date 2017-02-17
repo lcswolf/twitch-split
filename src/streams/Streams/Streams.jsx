@@ -15,9 +15,9 @@ const Streams = (props) => {
   ));
 
   return (
-    <div className={`${props.className} streams`}>
+    <section className={`${props.className} streams`}>
       {streams}
-    </div>
+    </section>
   );
 };
 Streams.propTypes = propTypes;

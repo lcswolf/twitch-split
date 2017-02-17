@@ -7,17 +7,19 @@ const Description = (props) => {
   if (!props.visible) style.display = 'none';
 
   return (
-    <div className="description" style={style}>
-      <p>
-        Use twitch split to watch multiple streams from Twitch.tv side by side.
-      </p>
-      <p>
-        Search for two or three streams and hit the button.
-      </p>
-      <p>
-        Share the URL from your address bar with friends to share your split view.
-      </p>
-    </div>
+    <article className="description" style={style}>
+      <ul>
+        <li>
+          Use twitch split to watch multiple streams from Twitch.tv side by side.
+        </li>
+        <li>
+          Search for two or three streams and hit the button.
+        </li>
+        <li>
+          Share the URL from your address bar with friends to share your split view.
+        </li>
+      </ul>
+    </article>
   );
 };
 

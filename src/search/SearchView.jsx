@@ -8,6 +8,7 @@ import './SearchView.scss';
 
 const SearchView = () => (
   <div className="search-view">
+    <aside className="search-view__background" />
     <div className="search-view__container">
       <Header className="search-view__header" />
       <Input />

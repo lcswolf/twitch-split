@@ -1,8 +1,37 @@
+@import "../../assets/css/mixins/colors.scss";
+@import "../../assets/css/mixins/keylines.scss";
+
 .description {
-  padding: 50px 10px;
   font-size: 1.2rem;
   font-family: 'Raleway', sans-serif;
-  p {
-    padding: 5px 0;
+  $bullet-spacing: 1.5rem;
+  @include respond-to(mobile) {
+    position: fixed;
+    bottom: 0;
+  }
+
+  ul {
+    list-style: none;
+    padding-top: 50px;
+    padding-left: $bullet-spacing + .2rem;
+  }
+
+  li {
+    padding-bottom: 30px;
+    font-size: 1rem;
+
+    &::before {
+      display: inline-block;
+      width: $bullet-spacing;
+      margin-left: -$bullet-spacing;
+      font-family: 'FontAwesome';
+      font-size: .6rem;
+      content: "\f111";
+      color: $accent;
+      line-height: $bullet-spacing;
+      vertical-align: top;
+    }
+
+    &:last-of-type { padding-bottom: 0; }
   }
 }
