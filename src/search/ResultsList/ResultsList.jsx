@@ -22,6 +22,7 @@ class ResultList extends Component {
       />
     ));
 
+    // Only show result list when search input has focus.
     const style = {};
     if (!this.props.showResultsList) style.display = 'none';
 
