@@ -5,9 +5,11 @@ $hover-color: $accent;
   flex-shrink: 0;
 
   display: flex;
+  margin-top: 20px;
   flex-direction: column;
   justify-content: flex-end;
   position: relative;
+  box-shadow: 3px 3px 27px 0px rgba(0,0,0,0.52);
 
   input {
     width: 100%;
@@ -15,7 +17,7 @@ $hover-color: $accent;
     padding-left: 48px;
     font-size: 1.5rem;
     border: none;
-    border-bottom: 1px solid;
+    // border-bottom: 1px solid;
     outline: none;
 
     &:hover, &:focus {
