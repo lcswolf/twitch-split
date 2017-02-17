@@ -1,8 +1,41 @@
-.chats {
+@mixin column() {
   display: flex;
   flex-direction: column;
+}
+
+.chats {
+  position: relative;
+  @include column();
+
+  &__collapse {
+    z-index: 100;
+    $width: 25px;
+    position: absolute;
+    width: $width;
+    height: $width;
+    left: -$width - 5px;
+
+    button {
+      width: 100%;
+      background: linear-gradient(
+        rgba(0, 0, 0, .5),
+        rgba(0, 0, 0, .5)
+      );
+      height: 36px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      color: white;
+      font-size: 1.2rem;
+    }
+  }
 
   &__panels {
     flex-grow: 1;
+  }
+
+  &__wrapper {
+    @include column();
+    flex: 1;
   }
 }
