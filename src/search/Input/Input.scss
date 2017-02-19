@@ -12,6 +12,11 @@
   // when phone keyboard is shown.
   z-index: 100;
 
+  form {
+    // Size correctly in Internet Explorer.
+    height: 50px;
+  }
+
   input {
     width: 100%;
     height: 50px;
