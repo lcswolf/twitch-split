@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import classNames from 'classnames';
 import './Input.scss';
 
 class Input extends Component {
@@ -7,8 +8,12 @@ class Input extends Component {
     onBlur: PropTypes.func.isRequired,
     onFocus: PropTypes.func.isRequired,
     className: PropTypes.string,
-    value: PropTypes.string.isRequired,
     disabled: PropTypes.bool.isRequired,
+
+    // ESLint does not detect the usage of prop in componentWillReceiveProps.
+    // https://github.com/yannickcr/eslint-plugin-react/issues/814
+    // eslint-disable-next-line react/no-unused-prop-types
+    value: PropTypes.string.isRequired,
   };
 
   static defaultProps = { className: '' };
@@ -17,9 +22,15 @@ class Input extends Component {
     this.input.focus();
   }
 
+  componentWillReceiveProps(nextProps) {
+    // Clear the input box when an item has been selected from the dropdown
+    // list.
+    if (nextProps.value === '') this.input.value = '';
+  }
+
   blur = () => {
-    // Add a small delay so click handlers in other components have a chance to
-    // fire.
+    // Add a small delay so click handlers in dropdown component have a chance
+    // to fire.
     setTimeout(() => {
       this.props.onBlur();
     }, 300);
@@ -28,7 +39,7 @@ class Input extends Component {
   render() {
     return (
       <section
-        className={`search-input ${this.props.className}`}
+        className={classNames('search-input', this.props.className)}
       >
         <form
           onSubmit={(e) => { e.preventDefault(); }}
@@ -39,7 +50,6 @@ class Input extends Component {
             onChange={(e) => { this.props.onChange({ value: e.target.value }); }}
             onBlur={this.blur}
             onFocus={() => { this.props.onFocus(); }}
-            value={this.props.value}
             disabled={this.props.disabled}
           />
         </form>
