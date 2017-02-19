@@ -10,6 +10,9 @@ $hover-color: $accent;
   justify-content: flex-end;
   position: relative;
   box-shadow: 3px 3px 27px 0px rgba(0,0,0,0.52);
+  // Ensure input box is not overlapped by description section on mobile view
+  // when phone keyboard is shown.
+  z-index: 100;
 
   input {
     width: 100%;
