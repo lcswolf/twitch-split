@@ -45,23 +45,6 @@ describe('<Input />', () => {
     expect(onChange.calledWith({ value: 'test' })).to.be.true;
   });
 
-  it('calls onBlur on focus loss', (done) => {
-    const onBlur = sinon.spy();
-    const wrapper = input({ onBlur });
-    wrapper.find('input').simulate('blur');
-    setTimeout(() => {
-      expect(onBlur.called).to.be.true;
-      done();
-    }, 350);
-  });
-
-  it('calls onFocus', () => {
-    const onFocus = sinon.spy();
-    const wrapper = input({ onFocus });
-    wrapper.find('input').simulate('focus');
-    expect(onFocus.called).to.be.true;
-  });
-
   it('disables input when disabled is true', () => {
     const wrapper = input({ disabled: true });
     expect(wrapper.find('input').node.props.disabled).to.be.true;

@@ -1,9 +1,16 @@
+@import "../../assets/css/mixins/keylines.scss";
+
 .result-list {
   overflow-y: auto;
   box-shadow: 5px 15px 20px 0px rgba(0,0,0,0.25);
   background-color: white;
   // Increase z-index so box shadow from input doesn't overlap search results.
   z-index: 200;
+  // Work around for Internet Explorer 11 issue with flex box. Child flex box
+  // stretches parent instead of being contained if not contrained with a max
+  // height.
+  max-height: 60vh;
+  @include respond-to(mobile) { max-height: initial; }
 
   ul {
     margin: 0;

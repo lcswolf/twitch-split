@@ -7,7 +7,7 @@ export default createStore(
 
   // Redux Devtools Extension
   // eslint-disable-next-line no-underscore-dangle
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  global.window && window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 
   // Async middleware
   applyMiddleware(thunk),

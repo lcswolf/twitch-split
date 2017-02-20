@@ -10,10 +10,6 @@ const InputContainer = props => (
       props.dispatch(actions.streamSearch(value));
     }}
 
-    onBlur={() => { props.dispatch(actions.searchResultsHide()); }}
-
-    onFocus={() => { props.dispatch(actions.searchResultsShow()); }}
-
     className={props.className}
 
     value={props.currentSearch}

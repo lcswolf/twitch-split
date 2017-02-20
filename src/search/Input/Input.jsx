@@ -5,8 +5,6 @@ import './Input.scss';
 class Input extends Component {
   static propTypes = {
     onChange: PropTypes.func.isRequired,
-    onBlur: PropTypes.func.isRequired,
-    onFocus: PropTypes.func.isRequired,
     className: PropTypes.string,
     disabled: PropTypes.bool.isRequired,
 
@@ -28,14 +26,6 @@ class Input extends Component {
     if (nextProps.value === '') this.input.value = '';
   }
 
-  blur = () => {
-    // Add a small delay so click handlers in dropdown component have a chance
-    // to fire.
-    setTimeout(() => {
-      this.props.onBlur();
-    }, 300);
-  }
-
   render() {
     return (
       <section
@@ -48,8 +38,6 @@ class Input extends Component {
             type="text"
             ref={(c) => { this.input = c; }}
             onChange={(e) => { this.props.onChange({ value: e.target.value }); }}
-            onBlur={this.blur}
-            onFocus={() => { this.props.onFocus(); }}
             disabled={this.props.disabled}
           />
         </form>
