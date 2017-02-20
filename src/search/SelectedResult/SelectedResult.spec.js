@@ -8,7 +8,7 @@ const selectedResult = props => (
   shallow(<SelectedResult
     previewTemplate="https://example.com/preview-{width}-{height}.png"
     onResultClicked={() => {}}
-    id="123"
+    id={123}
     displayName="Some Streamer"
     {...props}
   />)
@@ -29,6 +29,6 @@ describe('<SelectedResult />', () => {
     const onResultClicked = sinon.spy();
     const wrapper = selectedResult({ onResultClicked });
     wrapper.simulate('click');
-    expect(onResultClicked.calledWith('123')).to.be.true;
+    expect(onResultClicked.calledWith(123)).to.be.true;
   });
 });
