@@ -30,7 +30,7 @@ const SelectedResult = (props) => {
 SelectedResult.propTypes = {
   previewTemplate: PropTypes.string.isRequired,
   onResultClicked: PropTypes.func.isRequired,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   displayName: PropTypes.string.isRequired,
 };
 
