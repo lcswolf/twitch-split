@@ -1,6 +1,3 @@
-@import "../../assets/css/mixins/colors";
-$hover-color: $accent;
-
 .search-input {
   flex-shrink: 0;
 
@@ -8,11 +5,17 @@ $hover-color: $accent;
   margin-top: 20px;
   flex-direction: column;
   justify-content: flex-end;
+  // Set position relative so search icon can be placed accurately.
   position: relative;
   box-shadow: 3px 3px 27px 0px rgba(0,0,0,0.52);
   // Ensure input box is not overlapped by description section on mobile view
   // when phone keyboard is shown.
   z-index: 100;
+
+  form {
+    // Size correctly in Internet Explorer.
+    height: 50px;
+  }
 
   input {
     width: 100%;
@@ -21,11 +24,6 @@ $hover-color: $accent;
     font-size: 1.5rem;
     border: none;
     outline: none;
-
-    &:hover, &:focus {
-      border-color: $accent;
-      border-width: 2px;
-    }
   }
 
   ::before {
@@ -34,6 +32,6 @@ $hover-color: $accent;
     position: absolute;
     font-size: 1.5rem;
     left: 14px;
-    bottom: 10px;
+    bottom: 12px;
   }
 }

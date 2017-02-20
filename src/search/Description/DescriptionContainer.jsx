@@ -1,13 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Description from './Description';
+import Description, { propTypes } from './Description';
 
-/* eslint-disable react/prop-types */
 const DescriptionContainer = props => (
   <Description visible={props.visible} />
 );
 
+DescriptionContainer.propTypes = propTypes;
+
 const mapStateToProps = state => ({
+  // Hide description section when search results are visible to prevent page
+  // height from expanding beyond 100vh.
   visible: !state.showSearchResults || state.currentSearch === '',
 });
 

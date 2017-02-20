@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import './SelectedResult.scss';
 
-/* eslint-disable react/prop-types */
 const SelectedResult = (props) => {
   const preview = props.previewTemplate
     .replace('{width}', '160')
@@ -26,6 +25,13 @@ const SelectedResult = (props) => {
       />
     </article>
   );
+};
+
+SelectedResult.propTypes = {
+  previewTemplate: PropTypes.string.isRequired,
+  onResultClicked: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
+  displayName: PropTypes.string.isRequired,
 };
 
 export default SelectedResult;

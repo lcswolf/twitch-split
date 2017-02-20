@@ -1,17 +1,18 @@
 @import "../../assets/css/mixins/colors.scss";
 @import "../../assets/css/mixins/keylines.scss";
 
+$font-size: 1.2rem;
+$bullet-spacing: 1.5rem;
+
 .description {
-  font-size: 1.2rem;
-  $bullet-spacing: 1.5rem;
+  // Have description section hug the bottom of the display on mobile.
   @include respond-to(mobile) {
     position: fixed;
     bottom: 0;
   }
-  @media only screen and (max-height: 400px) {
-    // display: none;
-  }
 
+  // Remove default bullet, shift list to the left with enough room for custom
+  // bullet.
   ul {
     list-style: none;
     padding-top: 50px;
@@ -19,9 +20,10 @@
   }
 
   li {
-    padding-bottom: 30px;
+    padding-bottom: 20px;
     font-size: 1rem;
 
+    // Create a colored bullet using the accent color.
     &::before {
       display: inline-block;
       width: $bullet-spacing;
@@ -30,7 +32,7 @@
       font-size: .6rem;
       content: "\f111";
       color: $accent;
-      line-height: $bullet-spacing;
+      line-height: $bullet-spacing - .4rem;
       vertical-align: top;
     }
 

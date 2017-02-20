@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+import uuid from 'uuid/v4';
 import './Description.scss';
+import features from './features.json';
 
-/* eslint-disable react/prop-types */
+const featureListItems = features.map(feature => (
+  <li key={uuid()}>{feature}</li>
+));
+
 const Description = (props) => {
   // Hide when search results are visible.
   const style = {};
@@ -10,18 +15,16 @@ const Description = (props) => {
   return (
     <article className="description" style={style}>
       <ul>
-        <li>
-          Use twitch split to watch multiple streams from Twitch.tv side by side.
-        </li>
-        <li>
-          Search for two or three streams and hit the button.
-        </li>
-        <li>
-          Share the URL from your address bar with friends to share your split view.
-        </li>
+        {featureListItems}
       </ul>
     </article>
   );
 };
+
+export const propTypes = {
+  visible: PropTypes.bool.isRequired,
+};
+
+Description.propTypes = propTypes;
 
 export default Description;
