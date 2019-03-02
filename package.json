@@ -11,9 +11,7 @@
   },
   "scripts": {
     "start": "next src",
-    "lint": "eslint src/**/*.js src/**/*.jsx tools/**/*.js",
-    "test": "mocha --opts tools/mocha.opts",
-    "test:watch": "npm run test -- --watch"
+    "lint": "eslint src/**/*.js src/**/*.jsx tools/**/*.js"
   },
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
@@ -33,71 +31,6 @@
     "uuid": "^3.0.1"
   },
   "devDependencies": {
-    "babel-core": "^6.22.1",
-    "babel-eslint": "^7.1.1",
-    "babel-preset-latest": "^6.22.0",
-    "babel-preset-react": "^6.22.0",
-    "babel-preset-stage-2": "^6.22.0",
-    "babel-register": "^6.22.0",
-    "chai": "^3.5.0",
-    "enzyme": "^2.7.1",
-    "eslint": "3.13.0",
-    "eslint-config-airbnb": "^14.0.0",
-    "eslint-loader": "^1.6.1",
-    "eslint-plugin-import": "2.2.0",
-    "eslint-plugin-jsx-a11y": "3.0.2",
-    "eslint-plugin-react": "6.9.0",
-    "ignore-styles": "^5.0.1",
-    "mocha": "^3.2.0",
-    "nock": "^9.0.4",
-    "react-addons-test-utils": "^15.4.2",
-    "sass": "^1.17.2",
-    "sinon": "^1.17.7"
-  },
-  "babel.old": {
-    "presets": [
-      "latest",
-      "stage-2",
-      "react"
-    ],
-    "plugins": [
-      "react-hot-loader/babel"
-    ]
-  },
-  "eslintConfig": {
-    "parser": "babel-eslint",
-    "parserOptions": {
-      "ecmaVersion": 8,
-      "sourceType": "module",
-      "ecmaFeatures": {
-        "browser": true,
-        "jsx": true
-      }
-    },
-    "env": {
-      "browser": true,
-      "mocha": true
-    },
-    "rules": {
-      "import/no-extraneous-dependencies": [
-        "error",
-        {
-          "devDependencies": [
-            "**/*.spec.js"
-          ]
-        }
-      ],
-      "react/jsx-filename-extension": [
-        "error",
-        {
-          "extensions": [
-            ".jsx",
-            ".spec.js"
-          ]
-        }
-      ],
-      "no-unused-expressions": "off"
-    },
-    "extends": "airbnb"
+    "sass": "^1.17.2"
   }
 }
