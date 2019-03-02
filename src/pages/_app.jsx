@@ -3,7 +3,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import Head from "next/head";
 import { withReduxStore } from "../store";
-import "../assets/css/index.scss";
+import { CssBaseline } from "../display";
 
 class MyApp extends App {
   render() {
@@ -18,6 +18,8 @@ class MyApp extends App {
           <script src="https://use.fontawesome.com/b75bd924b5.js" />
         </Head>
         <Provider store={reduxStore}>
+          <CssBaseline />
+
           <Component {...pageProps} />
         </Provider>
       </Container>
