@@ -12,7 +12,7 @@ export default function StreamsPage({ params }) {
 // "http://url/streams?s=stream1,stream2".
 StreamsPage.getInitialProps = async ({ query }) => {
   const streamsQuery = query.s;
-  let streamsSplat;
+  let streamsSplat = "";
 
   try {
     streamsSplat = streamsQuery.replace(",", "/");

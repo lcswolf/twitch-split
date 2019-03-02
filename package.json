@@ -15,6 +15,7 @@
   ],
   "scripts": {
     "start": "next src",
+    "build": "next build src && next export src -o dist",
     "lint": "tslint -p tsconfig.json -t verbose",
     "type-check": "tsc"
   },
