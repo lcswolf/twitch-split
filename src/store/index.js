@@ -1,7 +1,8 @@
 import actions from './actions';
-import store from './store';
+import initializeStore from './initializeStore';
 
-export default store;
+export { initializeStore };
+export { default as withReduxStore } from './withReduxStore';
 
 export {
   actions,

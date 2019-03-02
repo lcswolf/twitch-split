@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import Link from 'next/link';
 import SelectedResult from '../SelectedResult';
 import './SelectedResultsList.scss';
 
@@ -10,12 +10,12 @@ const SelectedResultsList = (props) => {
   ));
 
   const streamsURL = props.results.reduce(
-    (url, result) => `${url}/${result.name.toLowerCase()}`,
-    '',
+    (url, result, index) => `${url}${index > 0 ? ',' : ''}${result.name.toLowerCase()}`,
+    '/streams?s=',
   );
 
   let goButton = (
-    <Link to={streamsURL}>
+    <Link href={streamsURL}>
       <button className="go-button">
         split
         <i className="fa fa-arrow-right" aria-hidden="true" />

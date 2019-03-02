@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import Input from '../Input';
 import ResultsList from '../ResultsList';
 import './Form.scss';

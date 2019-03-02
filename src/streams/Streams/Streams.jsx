@@ -10,7 +10,7 @@ const Streams = (props) => {
       src={`https://player.twitch.tv/?channel=${stream.name}`}
       frameBorder="0"
       scrolling="no"
-      allowFullScreen="true"
+      allowFullScreen
     />
   ));
 
