@@ -1,3 +1,3 @@
-import SelectedResult from './SelectedResult';
+import SelectedResult from "./SelectedResult";
 
 export default SelectedResult;

@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-import classNames from 'classnames';
-import './Input.scss';
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import classNames from "classnames";
+import "./Input.scss";
 
 class Input extends Component {
   static propTypes = {
@@ -15,7 +15,7 @@ class Input extends Component {
     value: PropTypes.string.isRequired,
   };
 
-  static defaultProps = { className: '' };
+  static defaultProps = { className: "" };
 
   componentDidMount() {
     this.input.focus();
@@ -24,21 +24,25 @@ class Input extends Component {
   componentWillReceiveProps(nextProps) {
     // Clear the input box when an item has been selected from the dropdown
     // list.
-    if (nextProps.value === '') this.input.value = '';
+    if (nextProps.value === "") this.input.value = "";
   }
 
   render() {
     return (
-      <section
-        className={classNames('search-input', this.props.className)}
-      >
+      <section className={classNames("search-input", this.props.className)}>
         <form
-          onSubmit={(e) => { e.preventDefault(); }}
+          onSubmit={e => {
+            e.preventDefault();
+          }}
         >
           <input
             type="text"
-            ref={(c) => { this.input = c; }}
-            onChange={(e) => { this.props.onChange({ value: e.target.value }); }}
+            ref={c => {
+              this.input = c;
+            }}
+            onChange={e => {
+              this.props.onChange({ value: e.target.value });
+            }}
             disabled={this.props.disabled}
           />
         </form>

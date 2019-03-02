@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-import Result, { resultProps } from '../Result';
-import './ResultsList.scss';
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import Result, { resultProps } from "../Result";
+import "./ResultsList.scss";
 
 export const propTypes = {
   results: PropTypes.arrayOf(PropTypes.shape(resultProps)).isRequired,
@@ -25,17 +25,17 @@ class ResultList extends Component {
 
     // Only show result list when search input has focus.
     const style = {};
-    if (!this.props.showResultsList) style.display = 'none';
+    if (!this.props.showResultsList) style.display = "none";
 
     return (
       <section
         className="result-list"
         style={style}
-        ref={(div) => { this.div = div; }}
+        ref={div => {
+          this.div = div;
+        }}
       >
-        <ul>
-          {results}
-        </ul>
+        <ul>{results}</ul>
       </section>
     );
   }

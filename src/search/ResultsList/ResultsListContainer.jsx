@@ -1,12 +1,14 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { actions } from '../../store';
-import ResultsList, { propTypes } from './ResultsList';
+import React from "react";
+import { connect } from "react-redux";
+import { actions } from "../../store";
+import ResultsList, { propTypes } from "./ResultsList";
 
 const ResultsListContainer = props => (
   <ResultsList
     results={props.results}
-    onResultClicked={(id) => { props.dispatch(actions.streamSelect(id)); }}
+    onResultClicked={id => {
+      props.dispatch(actions.streamSelect(id));
+    }}
     showResultsList={props.showResultsList}
   />
 );

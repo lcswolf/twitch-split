@@ -1,3 +1,3 @@
-import SelectedResultsListContainer from './SelectedResultsListContainer';
+import SelectedResultsListContainer from "./SelectedResultsListContainer";
 
 export default SelectedResultsListContainer;

@@ -1,11 +1,11 @@
-import actions from '../actions';
-import updateQuery from './updateQuery';
-import flattenResults from './flattenResults';
+import actions from "../actions";
+import updateQuery from "./updateQuery";
+import flattenResults from "./flattenResults";
 
 const initialState = {
   queries: {},
   showSearchResults: false,
-  currentSearch: '',
+  currentSearch: "",
   selectedStreams: [],
 };
 
@@ -45,22 +45,29 @@ export default (prevState, action) => {
     }
 
     case actions.STREAM_SELECT: {
-      const exists = state.selectedStreams.findIndex(stream => stream.id === action.id);
+      const exists = state.selectedStreams.findIndex(
+        stream => stream.id === action.id,
+      );
       if (exists !== -1) return state;
-      const selected = state.queries[state.currentSearch].find(stream => stream.id === action.id);
+      const selected = state.queries[state.currentSearch].find(
+        stream => stream.id === action.id,
+      );
       const newState = Object.assign({}, state);
       newState.selectedStreams = newState.selectedStreams.concat(selected);
-      newState.currentSearch = '';
+      newState.currentSearch = "";
       return newState;
     }
 
     case actions.STREAM_UNSELECT: {
       const newState = Object.assign({}, state);
-      const selectedStreams = state.selectedStreams.filter(stream => stream.id !== action.id);
+      const selectedStreams = state.selectedStreams.filter(
+        stream => stream.id !== action.id,
+      );
       newState.selectedStreams = selectedStreams;
       return newState;
     }
 
-    default: return state;
+    default:
+      return state;
   }
 };

@@ -1,5 +1,5 @@
-import React from 'react';
-import { StreamsView } from '../streams';
+import React from "react";
+import { StreamsView } from "../streams";
 
 // eslint-disable-next-line react/prop-types
 export default function StreamsPage({ params }) {
@@ -15,7 +15,7 @@ StreamsPage.getInitialProps = async ({ query }) => {
   let streamsSplat;
 
   try {
-    streamsSplat = streamsQuery.replace(',', '/');
+    streamsSplat = streamsQuery.replace(",", "/");
   } catch (e) {
     //
   }

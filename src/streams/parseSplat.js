@@ -12,7 +12,7 @@ export default function parseSplat(splat) {
   if (!/^([a-zA-Z0-9_]{4,}\/?)+$/.test(splat)) return [];
   return splat
     .toLowerCase()
-    .split('/')
+    .split("/")
     .filter(value => value.length !== 0)
     .filter((value, index) => index < 3);
 }

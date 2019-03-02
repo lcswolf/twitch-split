@@ -1,9 +1,9 @@
-import App, { Container } from 'next/app';
-import React from 'react';
-import { Provider } from 'react-redux';
-import Head from 'next/head';
-import { withReduxStore } from '../store';
-import '../assets/css/index.scss';
+import App, { Container } from "next/app";
+import React from "react";
+import { Provider } from "react-redux";
+import Head from "next/head";
+import { withReduxStore } from "../store";
+import "../assets/css/index.scss";
 
 class MyApp extends App {
   render() {
@@ -11,7 +11,10 @@ class MyApp extends App {
     return (
       <Container>
         <Head>
-          <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+          <link
+            href="https://fonts.googleapis.com/css?family=Roboto"
+            rel="stylesheet"
+          />
           <script src="https://use.fontawesome.com/b75bd924b5.js" />
         </Head>
         <Provider store={reduxStore}>

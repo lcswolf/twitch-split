@@ -1,3 +1,3 @@
-import ChatEmbs from './ChatEmbs';
+import ChatEmbs from "./ChatEmbs";
 
 export default ChatEmbs;

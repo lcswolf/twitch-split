@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import propTypes from '../propTypes';
-import ChatTabs from '../ChatTabs';
-import ChatEmbs from '../ChatEmbs';
-import './Chats.scss';
+import React, { Component } from "react";
+import propTypes from "../propTypes";
+import ChatTabs from "../ChatTabs";
+import ChatEmbs from "../ChatEmbs";
+import "./Chats.scss";
 
 class Chats extends Component {
   static propTypes = propTypes;
@@ -15,18 +15,18 @@ class Chats extends Component {
     };
   }
 
-  tabClicked = (index) => {
+  tabClicked = index => {
     this.setState({ active: index });
-  }
+  };
 
   toggleCollapsed = () => {
     this.setState({ collapsed: !this.state.collapsed });
-  }
+  };
 
   render() {
     const style = {};
-    if (this.state.collapsed) style.display = 'none';
-    const arrow = this.state.collapsed ? 'left' : 'right';
+    if (this.state.collapsed) style.display = "none";
+    const arrow = this.state.collapsed ? "left" : "right";
 
     return (
       <aside className={`${this.props.className} chats`}>

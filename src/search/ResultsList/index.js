@@ -1,3 +1,3 @@
-import ResultsListContainer from './ResultsListContainer';
+import ResultsListContainer from "./ResultsListContainer";
 
 export default ResultsListContainer;

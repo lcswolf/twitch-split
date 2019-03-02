@@ -1,3 +1,3 @@
-import Streams from './Streams';
+import Streams from "./Streams";
 
 export default Streams;

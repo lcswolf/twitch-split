@@ -1,19 +1,19 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-import Input from '../Input';
-import ResultsList from '../ResultsList';
-import './Form.scss';
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import Input from "../Input";
+import ResultsList from "../ResultsList";
+import "./Form.scss";
 
 class Form extends Component {
-  onBlur = (e) => {
+  onBlur = e => {
     // Skip check when run during unit tests where no DOM is available.
     if (document && document.activeElement) {
       // Internet Explorer blurs text input when scrollbar on results list is
       // clicked. Work around the issue by ignoring blur events.
-      if (document.activeElement.classList.contains('form')) {
+      if (document.activeElement.classList.contains("form")) {
         e.target.focus();
         return;
-      } else if (e.target.classList.contains('form')) return;
+      } else if (e.target.classList.contains("form")) return;
     }
 
     // Add a small delay so click handlers in dropdown component have a chance
@@ -21,17 +21,21 @@ class Form extends Component {
     setTimeout(() => {
       this.props.onBlur();
     }, 300);
-  }
+  };
 
   render() {
     return (
-      <div
-        className="form"
-        onBlur={this.onBlur}
-        onFocus={this.props.onFocus}
-      >
-        <Input ref={(c) => { this.input = c; }} />
-        <ResultsList ref={(c) => { this.list = c; }} />
+      <div className="form" onBlur={this.onBlur} onFocus={this.props.onFocus}>
+        <Input
+          ref={c => {
+            this.input = c;
+          }}
+        />
+        <ResultsList
+          ref={c => {
+            this.list = c;
+          }}
+        />
       </div>
     );
   }

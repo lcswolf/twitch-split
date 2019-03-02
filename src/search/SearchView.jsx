@@ -1,9 +1,9 @@
-import React from 'react';
-import Header from './Header';
-import SelectedResultsList from './SelectedResultsList';
-import Form from './Form';
-import Description from './Description';
-import './SearchView.scss';
+import React from "react";
+import Header from "./Header";
+import SelectedResultsList from "./SelectedResultsList";
+import Form from "./Form";
+import Description from "./Description";
+import "./SearchView.scss";
 
 const SearchView = () => (
   <div className="search-view">

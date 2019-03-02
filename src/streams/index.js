@@ -1,4 +1,4 @@
-import StreamsView from './StreamsView';
+import StreamsView from "./StreamsView";
 
 /* eslint-disable import/prefer-default-export */
 export { StreamsView };

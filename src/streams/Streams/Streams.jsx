@@ -1,8 +1,8 @@
-import React from 'react';
-import propTypes from '../propTypes';
-import './Streams.scss';
+import React from "react";
+import propTypes from "../propTypes";
+import "./Streams.scss";
 
-const Streams = (props) => {
+const Streams = props => {
   const streams = props.streams.map(stream => (
     <iframe
       key={stream.id}
@@ -14,11 +14,7 @@ const Streams = (props) => {
     />
   ));
 
-  return (
-    <section className={`${props.className} streams`}>
-      {streams}
-    </section>
-  );
+  return <section className={`${props.className} streams`}>{streams}</section>;
 };
 Streams.propTypes = propTypes;
 

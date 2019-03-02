@@ -1,17 +1,19 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import './Result.scss';
+import PropTypes from "prop-types";
+import React from "react";
+import "./Result.scss";
 
-const Result = (props) => {
+const Result = props => {
   const preview = props.previewTemplate
-    .replace('{width}', '160')
-    .replace('{height}', '90');
+    .replace("{width}", "160")
+    .replace("{height}", "90");
 
   return (
     /* eslint-disable jsx-a11y/no-static-element-interactions */
     <li
       className="search-result"
-      onClick={() => { props.onClick(props.id); }}
+      onClick={() => {
+        props.onClick(props.id);
+      }}
     >
       <article
         className="search-result__content"
@@ -21,9 +23,7 @@ const Result = (props) => {
           {props.displayName}
         </p>
 
-        <p className="search-result__section">
-          {props.status}
-        </p>
+        <p className="search-result__section">{props.status}</p>
 
         <p className="search-result__section search-result__section--game">
           {props.game}

@@ -1,23 +1,21 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import uuid from 'uuid/v4';
-import './Description.scss';
-import features from './features.json';
+import PropTypes from "prop-types";
+import React from "react";
+import uuid from "uuid/v4";
+import "./Description.scss";
+import features from "./features.json";
 
 const featureListItems = features.map(feature => (
   <li key={uuid()}>{feature}</li>
 ));
 
-const Description = (props) => {
+const Description = props => {
   // Hide when search results are visible.
   const style = {};
-  if (!props.visible) style.display = 'none';
+  if (!props.visible) style.display = "none";
 
   return (
     <article className="description" style={style}>
-      <ul>
-        {featureListItems}
-      </ul>
+      <ul>{featureListItems}</ul>
     </article>
   );
 };
